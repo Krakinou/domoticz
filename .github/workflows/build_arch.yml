@@ -92,23 +92,23 @@ jobs:
           python3 -m pip install requests
           case "${{ matrix.qemu_arch }}" in 
             aarch64)
-              curl -sSL https://github.com/Kitware/CMake/releases/download/v"${{ env.Vcmake }}"/cmake-"${{ env.Vcmake }}"-linux-aarch64.tar.gz -o cmake.tar.gz;
+              curl -sSL https://github.com/Kitware/CMake/releases/download/v${{ env.Vcmake }}/cmake-${{ env.Vcmake }}-linux-aarch64.tar.gz -o cmake.tar.gz;
               tar xf cmake.tar.gz --strip 1 -C /usr/local;
               export PATH=/usr/local/bin:$PATH;
               ;;
             armv7)
-              curl -sSL https://github.com/Kitware/CMake/releases/download/v"${{ env.Vcmake }}"/cmake-"${{ env.Vcmake }}".tar.gz -o cmake.tar.gz;
+              curl -sSL https://github.com/Kitware/CMake/releases/download/v${{ env.Vcmake }}/cmake-${{ env.Vcmake }}.tar.gz -o cmake.tar.gz;
               tar xf cmake.tar.gz;
-              cd cmake-"${{ env.Vcmake }}";
+              cd cmake-${{ env.Vcmake }};
               ./configure;
               make install  >> /dev/null 2>&1;
               export PATH=/usr/local/bin:$PATH;
               cd ..;
               ;;
             esac
-          wget --no-check-certificate https://boostorg.jfrog.io/artifactory/main/release/"${{ env.Vboost }}"/source/boost_"${{ env.Vboost_ }}".tar.gz >> /dev/null 2>&1
-          tar xfz boost_"${{ env.Vboost_ }}".tar.gz
-          cd boost_"${{ env.Vboost_ }}"/
+          wget --no-check-certificate https://boostorg.jfrog.io/artifactory/main/release/${{ env.Vboost }}/source/boost_${{ env.Vboost_ }}.tar.gz >> /dev/null 2>&1
+          tar xfz boost_${{ env.Vboost_ }}.tar.gz
+          cd boost_${{ env.Vboost_ }}/
           ./bootstrap.sh
           ./b2 stage threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
           ./b2 install threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
@@ -132,23 +132,23 @@ jobs:
           python3 -m pip install requests
           case "${{ matrix.qemu_arch }}" in 
             aarch64)
-              curl -sSL https://github.com/Kitware/CMake/releases/download/v"${{ env.Vcmake }}"/cmake-"${{ env.Vcmake }}"-linux-aarch64.tar.gz -o cmake.tar.gz;
+              curl -sSL https://github.com/Kitware/CMake/releases/download/v${{ env.Vcmake }}/cmake-${{ env.Vcmake }}-linux-aarch64.tar.gz -o cmake.tar.gz;
               tar xf cmake.tar.gz --strip 1 -C /usr/local;
               export PATH=/usr/local/bin:$PATH;
               ;;
             armv7)
-              curl -sSL https://github.com/Kitware/CMake/releases/download/v"${{ env.Vcmake }}"/cmake-"${{ env.Vcmake }}".tar.gz -o cmake.tar.gz;
+              curl -sSL https://github.com/Kitware/CMake/releases/download/v${{ env.Vcmake }}/cmake-${{ env.Vcmake }}.tar.gz -o cmake.tar.gz;
               tar xf cmake.tar.gz;
-              cd cmake-"${{ env.Vcmake }}";
+              cd cmake-${{ env.Vcmake }};
               ./configure;
               make install  >> /dev/null 2>&1;
               export PATH=/usr/local/bin:$PATH;
               cd ..;
               ;;
             esac
-          wget --no-check-certificate https://boostorg.jfrog.io/artifactory/main/release/"${{ env.Vboost }}"/source/boost_"${{ env.Vboost_ }}".tar.gz >> /dev/null 2>&1
-          tar xfz boost_"${{ env.Vboost_ }}".tar.gz
-          cd boost_"${{ env.Vboost_ }}"/
+          wget --no-check-certificate https://boostorg.jfrog.io/artifactory/main/release/${{ env.Vboost }}/source/boost_${{ env.Vboost_ }}.tar.gz >> /dev/null 2>&1
+          tar xfz boost_${{ env.Vboost_ }}.tar.gz
+          cd boost_${{ env.Vboost_ }}/
           ./bootstrap.sh
           ./b2 stage threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
           ./b2 install threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
@@ -176,23 +176,23 @@ jobs:
           python3 -m pip install requests
           case "${{ matrix.qemu_arch }}" in 
             aarch64)
-              curl -sSL https://github.com/Kitware/CMake/releases/download/v"${{ env.Vcmake }}"/cmake-"${{ env.Vcmake }}"-linux-aarch64.tar.gz -o cmake.tar.gz;
+              curl -sSL https://github.com/Kitware/CMake/releases/download/v${{ env.Vcmake }}/cmake-${{ env.Vcmake }}-linux-aarch64.tar.gz -o cmake.tar.gz;
               tar xf cmake.tar.gz --strip 1 -C /usr/local;
               export PATH=/usr/local/bin:$PATH;
               ;;
             armv7)
-              curl -sSL https://github.com/Kitware/CMake/releases/download/v"${{ env.Vcmake }}"/cmake-"${{ env.Vcmake }}".tar.gz -o cmake.tar.gz;
+              curl -sSL https://github.com/Kitware/CMake/releases/download/v${{ env.Vcmake }}/cmake-${{ env.Vcmake }}.tar.gz -o cmake.tar.gz;
               tar xf cmake.tar.gz;
-              cd cmake-"${{ env.Vcmake }}";
+              cd cmake-${{ env.Vcmake }};
               ./configure;
               make install  >> /dev/null 2>&1;
               export PATH=/usr/local/bin:$PATH;
               cd ..;
               ;;
             esac
-          wget --no-check-certificate https://boostorg.jfrog.io/artifactory/main/release/"${{ env.Vboost }}"/source/boost_"${{ env.Vboost_ }}".tar.gz >> /dev/null 2>&1
-          tar xfz boost_"${{ env.Vboost_ }}".tar.gz
-          cd boost_"${{ env.Vboost_ }}"/
+          wget --no-check-certificate https://boostorg.jfrog.io/artifactory/main/release/${{ env.Vboost }}/source/boost_${{ env.Vboost_ }}.tar.gz >> /dev/null 2>&1
+          tar xfz boost_${{ env.Vboost_ }}.tar.gz
+          cd boost_${{ env.Vboost_ }}/
           ./bootstrap.sh
           ./b2 stage threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
           ./b2 install threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
