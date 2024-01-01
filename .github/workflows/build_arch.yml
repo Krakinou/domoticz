@@ -16,7 +16,7 @@ on:
 #used for both X86 and qemu, require to rebuild the github packages via a manual workflow_dispatch
 #or will be run at 00.30 every day
 env:
-  Vcmake: 3.26.3
+  Vcmake: 3.27.6
   Vboost: 1.83.0
 
 jobs:
@@ -45,9 +45,7 @@ jobs:
       run: |
         sudo timedatectl set-timezone Europe/Amsterdam
         sudo apt-get update && sudo apt-get --autoremove upgrade
-        sudo apt-get install make gcc g++ libssl-dev git libcurl4-gnutls-dev libusb-dev python3-dev zlib1g-dev libcereal-dev liblua5.3-dev uthash-dev python3-pytest python3-pytest-bdd lua5.3 luarocks
-        sudo luarocks install busted
-        sudo luarocks install luacov
+        sudo apt-get install make gcc g++ libssl-dev git libcurl4-gnutls-dev libusb-dev python3-dev zlib1g-dev libcereal-dev liblua5.3-dev uthash-dev python3-pytest python3-pytest-bdd
         curl -sSL https://github.com/Kitware/CMake/releases/download/v${Vcmake}/cmake-${Vcmake}-linux-x86_64.tar.gz -o cmake.tar.gz;
         sudo tar xf cmake.tar.gz --strip 1 -C /usr/local;
         export PATH=/usr/local/bin:$PATH;
@@ -90,9 +88,7 @@ jobs:
           --volume "${GITHUB_WORKSPACE}/:/build"
         install: |
           apt-get update && apt-get install -y --no-install-recommends apt-utils && apt-get -y --autoremove upgrade
-          apt-get -y install tar wget curl make gcc g++ libssl-dev git libcurl4-gnutls-dev libusb-dev python3-dev zlib1g-dev libcereal-dev liblua5.3-dev uthash-dev libsqlite3-dev python3-pytest python3-pytest-bdd lua5.3 luarocks python3-pip
-          luarocks install busted
-          luarocks install luacov
+          apt-get -y install tar wget curl make gcc g++ libssl-dev git libcurl4-gnutls-dev libusb-dev python3-dev zlib1g-dev libcereal-dev liblua5.3-dev uthash-dev libsqlite3-dev python3-pytest python3-pytest-bdd python3-pip
           python3 -m pip install requests
           case "${{ matrix.qemu_arch }}" in 
             aarch64)
@@ -132,9 +128,7 @@ jobs:
           --volume "${GITHUB_WORKSPACE}/:/build"
         install: |
           apt-get update && apt-get install -y --no-install-recommends apt-utils && apt-get -y --autoremove upgrade
-          apt-get -y install tar wget curl make gcc g++ libssl-dev git libcurl4-gnutls-dev libusb-dev python3-dev zlib1g-dev libcereal-dev liblua5.3-dev uthash-dev libsqlite3-dev python3-pytest python3-pytest-bdd lua5.3 luarocks python3-pip
-          luarocks install busted
-          luarocks install luacov
+          apt-get -y install tar wget curl make gcc g++ libssl-dev git libcurl4-gnutls-dev libusb-dev python3-dev zlib1g-dev libcereal-dev liblua5.3-dev uthash-dev libsqlite3-dev python3-pytest python3-pytest-bdd python3-pip
           python3 -m pip install requests
           case "${{ matrix.qemu_arch }}" in 
             aarch64)
@@ -178,9 +172,7 @@ jobs:
           --volume "${GITHUB_WORKSPACE}/:/build"
         install: |
           apt-get update && apt-get install -y --no-install-recommends apt-utils && apt-get -y --autoremove upgrade
-          apt-get -y install tar wget curl make gcc g++ libssl-dev git libcurl4-gnutls-dev libusb-dev python3-dev zlib1g-dev libcereal-dev liblua5.3-dev uthash-dev libsqlite3-dev python3-pytest python3-pytest-bdd lua5.3 luarocks python3-pip
-          luarocks install busted
-          luarocks install luacov
+          apt-get -y install tar wget curl make gcc g++ libssl-dev git libcurl4-gnutls-dev libusb-dev python3-dev zlib1g-dev libcereal-dev liblua5.3-dev uthash-dev libsqlite3-dev python3-pytest python3-pytest-bdd python3-pip
           python3 -m pip install requests
           case "${{ matrix.qemu_arch }}" in 
             aarch64)
