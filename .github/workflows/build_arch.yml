@@ -104,9 +104,9 @@ jobs:
               cd ..;
               ;;
             esac
-          wget --no-check-certificate https://github.com/boostorg/boost/releases/download/boost-${Vboost}/boost-${Vboost}.tar.gz >> /dev/null 2>&1
-          tar xfz boost_${{ env.Vboost }}.tar.gz
-          cd boost_${{ env.Vboost }}/
+          curl -sSL https://github.com/boostorg/boost/releases/download/boost-${{ env.Vboost }}/boost-${{ env.Vboost }}.tar.gz -o boost.tar.gz
+          tar xf boost.tar.gz
+          cd boost-${{ env.Vboost }}/
           ./bootstrap.sh
           ./b2 stage threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
           ./b2 install threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
@@ -142,9 +142,9 @@ jobs:
               cd ..;
               ;;
             esac
-          wget --no-check-certificate https://github.com/boostorg/boost/releases/download/boost-${Vboost}/boost-${Vboost}.tar.gz >> /dev/null 2>&1
-          tar xfz boost_${{ env.Vboost }}.tar.gz
-          cd boost_${{ env.Vboost }}/
+           curl -sSL https://github.com/boostorg/boost/releases/download/boost-${{ env.Vboost }}/boost-${{ env.Vboost }}.tar.gz -o boost.tar.gz
+           tar xf boost.tar.gz
+           cd boost-${{ env.Vboost }}/
           ./bootstrap.sh
           ./b2 stage threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
           ./b2 install threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
@@ -184,9 +184,9 @@ jobs:
               cd ..;
               ;;
             esac
-          wget --no-check-certificate https://github.com/boostorg/boost/releases/download/boost-${Vboost}/boost-${Vboost}.tar.gz >> /dev/null 2>&1
-          tar xfz boost_${{ env.Vboost }}.tar.gz
-          cd boost_${{ env.Vboost }}/
+          curl -sSL https://github.com/boostorg/boost/releases/download/boost-${{ env.Vboost }}/boost-${{ env.Vboost }}.tar.gz -o boost.tar.gz
+          tar xf boost.tar.gz
+          cd boost-${{ env.Vboost }}/
           ./bootstrap.sh
           ./b2 stage threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
           ./b2 install threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
