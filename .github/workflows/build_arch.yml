@@ -142,9 +142,9 @@ jobs:
               cd ..;
               ;;
             esac
-           curl -sSL https://github.com/boostorg/boost/releases/download/boost-${{ env.Vboost }}/boost-${{ env.Vboost }}.tar.gz -o boost.tar.gz
-           tar xf boost.tar.gz
-           cd boost-${{ env.Vboost }}/
+          curl -sSL https://github.com/boostorg/boost/releases/download/boost-${{ env.Vboost }}/boost-${{ env.Vboost }}.tar.gz -o boost.tar.gz
+          tar xf boost.tar.gz
+          cd boost-${{ env.Vboost }}/
           ./bootstrap.sh
           ./b2 stage threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
           ./b2 install threading=multi link=static --with-thread --with-system --with-chrono >> /dev/null 2>&1
